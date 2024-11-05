@@ -5,3 +5,4 @@
 /.vs
 /TrainManager/.vs/TrainManager
 /TrainManager/TrainManager.ConApp/obj
+/TrainManager/TrainManager.ClassLib/obj
