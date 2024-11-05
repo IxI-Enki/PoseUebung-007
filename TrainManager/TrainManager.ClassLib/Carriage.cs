@@ -1,6 +1,6 @@
 ﻿namespace TrainManager.ClassLib;
 
-public class Carriage
+internal class Carriage
 {
   #region FIELDS
 
