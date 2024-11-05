@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConApp", "ConApp", "{55C68808-45BF-459E-863D-99921DBBEB88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainManager.ConApp", "TrainManager.ConApp\TrainManager.ConApp.csproj", "{27BACB96-1FDF-49ED-84FD-12AF43307D1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27BACB96-1FDF-49ED-84FD-12AF43307D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BACB96-1FDF-49ED-84FD-12AF43307D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BACB96-1FDF-49ED-84FD-12AF43307D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BACB96-1FDF-49ED-84FD-12AF43307D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27BACB96-1FDF-49ED-84FD-12AF43307D1E} = {55C68808-45BF-459E-863D-99921DBBEB88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DCE2291-9155-4262-BEAD-6626117C8950}
+	EndGlobalSection
+EndGlobal
