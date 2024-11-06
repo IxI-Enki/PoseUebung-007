@@ -13,26 +13,6 @@ internal class Train(double maxTrainWeight)
   public int CountOfPassangersCars => GetNumOfPassengerCars();
   #endregion
 
-  #region PRIVATE HELPER METHODS
-  // private int GetNumOfPassengerCars() => CarriageList?.Count(c => c is PassengerCar) ?? 0;
-  private int GetNumOfPassengerCars()
-  {
-    int count = 0;
-    if (CarriageList != null)
-      foreach (Carriage c in CarriageList)
-        count += (c is PassengerCar) ? 1 : 0;
-    return count;
-  }
-
-  private void AddCarInSortedOrder(Carriage newCar)
-  {
-    int index = 0;
-    while (index < CarriageList!.Count && CarriageList[ index ].GetFullWeight() >= newCar.GetFullWeight())
-      index++;
-    CarriageList.Insert(index , newCar);
-  }
-  #endregion
-
   #region METHODS
   // public double GetTrainWeight() => CarriageList?.Sum(c => c.GetFullWeight()) ?? 0;
   public double GetTrainWeight()
@@ -80,9 +60,50 @@ internal class Train(double maxTrainWeight)
   }
 
   public bool AddPassangersToCar(int carriageNumber , int newPassengers)
+    => CanAddPassengers(carriageNumber , newPassengers);
+  #endregion 
+
+  #region PRIVATE HELPER METHODS
+  // private int GetNumOfPassengerCars() => CarriageList?.Count(c => c is PassengerCar) ?? 0;
+  private int GetNumOfPassengerCars()
   {
-    // LAST MISSING METHOD
+    int count = 0;
+    if (CarriageList != null)
+      foreach (Carriage c in CarriageList)
+        count += (c is PassengerCar) ? 1 : 0;
+    return count;
+  }
+
+  private void AddCarInSortedOrder(Carriage newCar)
+  {
+    int index = 0;
+    while (index < CarriageList!.Count && CarriageList[ index ].GetFullWeight() >= newCar.GetFullWeight())
+      index++;
+    CarriageList.Insert(index , newCar);
+  }
+
+  private bool CanAddPassengers(int carriageNumber , int newPassengers)
+  {
+    if (CarriageList == null)
+      return false;
+
+    foreach (PassengerCar p in CarriageList.Cast<PassengerCar>())
+      if (CeckCarriage(carriageNumber , newPassengers , p))
+      {
+        PassengerCar newLoadedCar = p;
+        newLoadedCar.NumberOfPassangers += newPassengers;
+
+        CarriageList.Remove(p);
+        AddCarriage(newLoadedCar);
+
+        return true;
+      }
     return false;
   }
+
+  private bool CeckCarriage(int carriageNumber , int newPassengers , PassengerCar p)
+    => carriageNumber == p.CarriageNumber
+    && p.NumberOfPassangers + newPassengers < Carriage.MAX_PASSENGERS_PER_CAR
+    && newPassengers * Carriage.AVG_WEIGHT_PER_PASSENGER + GetTrainWeight() < MaxTrainWeight;
   #endregion
 }
