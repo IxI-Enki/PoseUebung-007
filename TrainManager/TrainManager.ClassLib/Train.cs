@@ -3,8 +3,8 @@
 internal class Train(double maxTrainWeight)
 {
   #region FIELDS
-  private List<Carriage>? _carriageList;
-  private double _maxTrainWeight = maxTrainWeight;
+  private readonly List<Carriage>? _carriageList;
+  private readonly double _maxTrainWeight = maxTrainWeight;
   #endregion
 
   #region PROPERTIES

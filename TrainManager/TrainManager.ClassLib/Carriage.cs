@@ -12,8 +12,8 @@ internal abstract class Carriage(double emptyWeight , int carNum)
   #endregion
 
   #region FIELDS
-  private double _emptyWeight = emptyWeight;
-  private int _carriageNumber = CheckCarNum(carNum);
+  private readonly double _emptyWeight = emptyWeight;
+  private readonly int _carriageNumber = CheckCarNum(carNum);
   #endregion
 
   #region PROPERTIES
