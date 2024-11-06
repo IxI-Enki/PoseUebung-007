@@ -1,17 +1,14 @@
 ﻿namespace TrainManager.ClassLib;
 
 internal abstract class Carriage(double emptyWeight , int carNum)
-{
-  // use primary Constructors!
-
+{ 
   #region CONSTANTS
-  public const int MAX_PASSENGERS_PER_CAR = 200;     //  Maximale Anzahl der Passagiere je Passagierwagon
+  public const int MAX_PASSENGERS_PER_CAR = 200; //  Maximale Anzahl der Passagiere je Passagierwagon
   public const double
-    AVG_WEIGHT_PER_PASSENGER = 0.06,                  //  Durchschnittsgewicht eines Passagiers (in Tonnen)
-    COST_PER_PASSENGER_CAR = 300.0,                   //  Kosten je Wagon
-
-    MAX_CARGOWEIGHT_PER_CAR = 99.0,                   //  Maximale Fracht in Tonnen je Frachtwagon
-    COST_PER_CARGO_CAR = 250.0;                       //  Kosten je Frachtwagon
+    AVG_WEIGHT_PER_PASSENGER = 0.06, //  Durchschnittsgewicht eines Passagiers (in Tonnen)
+    COST_PER_PASSENGER_CAR = 300.0,  //  Kosten je Wagon
+    MAX_CARGOWEIGHT_PER_CAR = 99.0,  //  Maximale Fracht in Tonnen je Frachtwagon
+    COST_PER_CARGO_CAR = 250.0;      //  Kosten je Frachtwagon
   #endregion
 
   #region FIELDS
