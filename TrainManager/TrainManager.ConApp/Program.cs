@@ -1,4 +1,5 @@
-﻿namespace TrainManager.ConApp;
+﻿
+namespace TrainManager.ConApp;
 
 internal class Program
 {
