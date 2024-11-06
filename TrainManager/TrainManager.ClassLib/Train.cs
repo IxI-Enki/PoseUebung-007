@@ -1,4 +1,4 @@
-﻿ namespace TrainManager.ClassLib;
+﻿namespace TrainManager.ClassLib;
 
 internal class Train(double maxTrainWeight)
 {
