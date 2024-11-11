@@ -3,7 +3,7 @@
 public class Train(double maxTrainWeight)
 {
   #region FIELDS
-  private readonly List<Carriage>? _carriageList;
+  private readonly List<Carriage>? _carriageList = new();
   private readonly double _maxTrainWeight = maxTrainWeight;
   #endregion
 
@@ -51,11 +51,13 @@ public class Train(double maxTrainWeight)
   public bool AddCarriage(Carriage newCar)
   {
     bool added = false;
+
     if (newCar.GetFullWeight() + GetTrainWeight() < MaxTrainWeight)
     {
       AddCarInSortedOrder(newCar);
       added = true;
     }
+
     return added;
   }
 

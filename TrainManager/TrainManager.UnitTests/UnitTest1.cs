@@ -124,7 +124,6 @@ public class TrainTest
     Assert.AreEqual(newPCar5 , train.CarriageList[ 6 ] , "Wagen1 sollte an 7. Stelle stehen!");
   }
 
-
   /// <summary>
   ///A test for CountOfPassengerCars
   ///</summary>
@@ -143,7 +142,6 @@ public class TrainTest
     Assert.AreEqual(1 , newPCar4.CarriageNumber , "Wagon 2 hat ungültige Nr.");
     Assert.AreEqual(63251679 , newPCar5.CarriageNumber , "Wagon 5 hat gültige Nr.");
   }
-
 
   /// <summary>
   ///A test for GetCarriageWeight
@@ -168,7 +166,6 @@ public class TrainTest
     Assert.AreEqual(50 * 10 - Carriage.COST_PER_PASSENGER_CAR , newPCar1.GetProfit() , "Profit von Wagen1 stimmt nicht!");
     Assert.AreEqual(99 * 20 - Carriage.COST_PER_CARGO_CAR , newCCar2.GetProfit() , "Profit von Wagen2 stimmt nicht!");
   }
-
 
   /// <summary>
   ///A test for GetTrainWeight
@@ -203,8 +200,6 @@ public class TrainTest
     train.AddCarriage(new CargoCar(100 , 14121114 , 20 , 10));
     Assert.AreEqual(2 , train.CountOfPassengerCars , "Zug mit hat immer noch 2 Passagierwagen!");
   }
-
-
 
   /// <summary>
   ///A test for GetMostProfitableCarriage
@@ -255,7 +250,6 @@ public class TrainTest
     Assert.AreEqual(80 , train.GetAmoutOfPassengersInTrain() , "Wieder nur 4 Wagon: 80 Passagiere");
   }
 
-
   /// <summary>
   ///A test for AddPassengersToCar
   ///</summary>
@@ -276,7 +270,6 @@ public class TrainTest
     train.AddPassengersToCar(14121114 , 5);
     Assert.AreEqual(45 , ((PassengerCar)newPCar4).NumberOfPassengers , "Passagiere nicht zugestiegen!");
   }
-
 
   /// <summary>
   ///A test for AddPassengersToCar
@@ -308,9 +301,5 @@ public class TrainTest
     Assert.IsTrue(train.AddPassengersToCar(13121113 , 150) , "Zustieg 2 ist ok! True erwartet!");
     Assert.AreEqual(newPCar3 , train.CarriageList[ 0 ] , "Zustieg 2: Wagen3 sollte nach Zustieg von 150 Personen an 1. Stelle stehen!");
     Assert.IsFalse(train.AddPassengersToCar(15121115 , 100) , "Gesamtgewicht des Zugs würde überschritten werden! False erwartet!");
-
-
   }
-
-
 }
