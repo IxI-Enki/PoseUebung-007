@@ -1,6 +1,6 @@
 ﻿namespace TrainManager.ClassLib;
 
-internal abstract class Carriage(double emptyWeight , int carNum)
+public abstract class Carriage(double emptyWeight , int carNum)
 { 
   #region CONSTANTS
   public const int MAX_PASSENGERS_PER_CAR = 200; //  Maximale Anzahl der Passagiere je Passagierwagon

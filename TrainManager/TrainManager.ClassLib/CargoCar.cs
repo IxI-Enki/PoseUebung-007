@@ -1,6 +1,6 @@
 ﻿namespace TrainManager.ClassLib;
 
-internal class CargoCar(double emptyWeight , int carriageNumber , double cargoWeight , double pricePerTon) 
+public class CargoCar(double emptyWeight , int carriageNumber , double cargoWeight , double pricePerTon) 
   : Carriage(emptyWeight , carriageNumber)
 {
   #region FIELDS

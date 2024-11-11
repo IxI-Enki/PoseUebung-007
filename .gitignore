@@ -9,3 +9,6 @@
 /TrainManager/.vs/ProjectEvaluation
 /TrainManager/TrainManager.ClassLib/bin/Debug/net8.0
 /TrainManager/TrainManager.ConApp/bin/Debug/net8.0
+/TrainManager/TrainManager.UnitTests/obj
+/TrainManager/TrainManager.UnitTests/bin/Debug/net8.0
+/Template/TrainManagerTemplate.zip

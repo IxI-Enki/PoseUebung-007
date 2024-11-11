@@ -1,6 +1,6 @@
 ﻿namespace TrainManager.ClassLib;
 
-internal class Train(double maxTrainWeight)
+public class Train(double maxTrainWeight)
 {
   #region FIELDS
   private readonly List<Carriage>? _carriageList;
@@ -10,7 +10,7 @@ internal class Train(double maxTrainWeight)
   #region PROPERTIES
   public List<Carriage>? CarriageList => _carriageList;
   public double MaxTrainWeight => _maxTrainWeight;
-  public int CountOfPassangersCars => GetNumOfPassengerCars();
+  public int CountOfPassengerCars => GetNumOfPassengerCars();
   #endregion
 
   #region METHODS
@@ -38,13 +38,13 @@ internal class Train(double maxTrainWeight)
     return mostProfitableCar;
   }
 
-  // public int GetAmountOfPassangersInTrain() => CarriageList?.Cast<PassengerCar>().Sum(p => p.NumberOfPassangers) ?? 0;
-  public int GetAmountOfPassangersInTrain()
+  // public int GetAmoutOfPassengersInTrain() => CarriageList?.Cast<PassengerCar>().Sum(p => p.NumberOfPassengers) ?? 0;
+  public int GetAmoutOfPassengersInTrain()
   {
     int numOfPassengers = 0;
     if (CarriageList != null)
       foreach (PassengerCar p in CarriageList.Cast<PassengerCar>())
-        numOfPassengers += p.NumberOfPassangers;
+        numOfPassengers += p.NumberOfPassengers;
     return numOfPassengers;
   }
 
@@ -59,7 +59,7 @@ internal class Train(double maxTrainWeight)
     return added;
   }
 
-  public bool AddPassangersToCar(int carriageNumber , int newPassengers)
+  public bool AddPassengersToCar(int carriageNumber , int newPassengers)
     => CanAddPassengers(carriageNumber , newPassengers);
   #endregion 
 
@@ -91,7 +91,7 @@ internal class Train(double maxTrainWeight)
       if (CeckCarriage(carriageNumber , newPassengers , p))
       {
         PassengerCar newLoadedCar = p;
-        newLoadedCar.NumberOfPassangers += newPassengers;
+        newLoadedCar.NumberOfPassengers += newPassengers;
 
         CarriageList.Remove(p);
         AddCarriage(newLoadedCar);
@@ -103,7 +103,7 @@ internal class Train(double maxTrainWeight)
 
   private bool CeckCarriage(int carriageNumber , int newPassengers , PassengerCar p)
     => carriageNumber == p.CarriageNumber
-    && p.NumberOfPassangers + newPassengers < Carriage.MAX_PASSENGERS_PER_CAR
+    && p.NumberOfPassengers + newPassengers < Carriage.MAX_PASSENGERS_PER_CAR
     && newPassengers * Carriage.AVG_WEIGHT_PER_PASSENGER + GetTrainWeight() < MaxTrainWeight;
   #endregion
 }
