@@ -9,6 +9,7 @@ internal class Program
   {
     Console.Write("\n Train - Manager \n");
 
+    /*
     Train train = new Train(500);
     Carriage newPCar1 = new PassengerCar(60 , 11121111 , 50 , 10);
     Carriage newPCar2 = new PassengerCar(50 , 12121112 , 50 , 10);
@@ -39,9 +40,7 @@ internal class Program
     double car5bWeight = newPCar5b.GetFullWeight();
 
     trainB.AddPassengersToCar(14121114 , 12);
-
-    
-    Console.WriteLine();
+    */
 
     Console.ReadLine();
   }
