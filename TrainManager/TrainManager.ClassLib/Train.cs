@@ -106,7 +106,7 @@ public class Train(double maxTrainWeight)
 
           CarriageList.Remove(p);
           AddCarInSortedOrder(newLoadedCar);
- 
+
           return true;
         }
       }

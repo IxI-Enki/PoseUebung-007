@@ -1,6 +1,4 @@
-﻿
-using TrainManager.ClassLib;
-
+﻿using TrainManager.ClassLib;
 namespace TrainManager.ConApp;
 
 internal class Program
