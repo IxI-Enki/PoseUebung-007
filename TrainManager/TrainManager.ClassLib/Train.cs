@@ -27,10 +27,10 @@ public class Train(double maxTrainWeight)
   // public Carriage? GetMostProfitableCarriage() => CarriageList?.OrderByDescending(c => c.GetProfit()).FirstOrDefault();
   public Carriage? GetMostProfitableCarriage()
   {
-    if (CarriageList == null)
+    if (CarriageList!.Count == 0)
       return null;
 
-    Carriage? mostProfitableCar = CarriageList[ 0 ];
+    Carriage? mostProfitableCar = CarriageList.First();
     foreach (Carriage c in CarriageList)
       if (c.GetProfit() > mostProfitableCar.GetProfit())
         mostProfitableCar = c;
