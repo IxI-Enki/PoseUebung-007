@@ -43,8 +43,14 @@ public class Train(double maxTrainWeight)
   {
     int numOfPassengers = 0;
     if (CarriageList != null)
-      foreach (PassengerCar p in CarriageList.Cast<PassengerCar>())
-        numOfPassengers += p.NumberOfPassengers;
+      foreach (Carriage c in CarriageList)
+      {
+        if (c is PassengerCar)
+        {
+          PassengerCar p = (PassengerCar)c;
+          numOfPassengers += p.NumberOfPassengers;
+        }
+      }
     return numOfPassengers;
   }
 
