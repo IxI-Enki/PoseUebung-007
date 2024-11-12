@@ -105,8 +105,8 @@ public class Train(double maxTrainWeight)
           newLoadedCar.NumberOfPassengers += newPassengers;
 
           CarriageList.Remove(p);
-          AddCarriage(newLoadedCar);
-
+          AddCarInSortedOrder(newLoadedCar);
+ 
           return true;
         }
       }
@@ -115,7 +115,7 @@ public class Train(double maxTrainWeight)
 
   private bool CeckCarriage(int carriageNumber , int newPassengers , PassengerCar p)
     => carriageNumber == p.CarriageNumber
-    && p.NumberOfPassengers + newPassengers < Carriage.MAX_PASSENGERS_PER_CAR
+    && p.NumberOfPassengers + newPassengers <= Carriage.MAX_PASSENGERS_PER_CAR
     && newPassengers * Carriage.AVG_WEIGHT_PER_PASSENGER + GetTrainWeight() < MaxTrainWeight;
   #endregion
 }
