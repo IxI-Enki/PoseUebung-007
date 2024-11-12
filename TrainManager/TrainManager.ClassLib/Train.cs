@@ -95,16 +95,20 @@ public class Train(double maxTrainWeight)
     if (CarriageList == null)
       return false;
 
-    foreach (PassengerCar p in CarriageList.Cast<PassengerCar>())
-      if (CeckCarriage(carriageNumber , newPassengers , p))
+    foreach (Carriage c in CarriageList)
+      if (c is PassengerCar)
       {
-        PassengerCar newLoadedCar = p;
-        newLoadedCar.NumberOfPassengers += newPassengers;
+        PassengerCar p = (PassengerCar)c;
+        if (CeckCarriage(carriageNumber , newPassengers , p))
+        {
+          PassengerCar newLoadedCar = p;
+          newLoadedCar.NumberOfPassengers += newPassengers;
 
-        CarriageList.Remove(p);
-        AddCarriage(newLoadedCar);
+          CarriageList.Remove(p);
+          AddCarriage(newLoadedCar);
 
-        return true;
+          return true;
+        }
       }
     return false;
   }

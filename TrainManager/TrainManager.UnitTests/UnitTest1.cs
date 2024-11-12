@@ -297,6 +297,9 @@ public class TrainTest
     Assert.AreEqual(newPCar4 , train.CarriageList[ 2 ] , "Zustieg 1: Wagen4 sollte nach Zustieg von 12 Personen an 3. Stelle stehen!");
     Assert.AreEqual(newPCar3 , train.CarriageList[ 3 ] , "Zustieg 1: Wagen3 sollte nun an 4. Stelle stehen!");
     Assert.IsFalse(train.AddPassengersToCar(15121115 , 1000) , "Maximale Passagiere im Wagon überschritten -> False erwartet");
+  
+    // WORKS UNTIL HERE 
+    
     Assert.AreEqual(30 , newPCar5.NumberOfPassengers , "Wenn nicht alle einsteigen können, sollte keiner einsteigen!");
     Assert.IsTrue(train.AddPassengersToCar(13121113 , 150) , "Zustieg 2 ist ok! True erwartet!");
     Assert.AreEqual(newPCar3 , train.CarriageList[ 0 ] , "Zustieg 2: Wagen3 sollte nach Zustieg von 150 Personen an 1. Stelle stehen!");
