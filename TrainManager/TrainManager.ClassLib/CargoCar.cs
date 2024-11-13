@@ -1,6 +1,6 @@
 ﻿namespace TrainManager.ClassLib;
 
-public class CargoCar(double emptyWeight , int carriageNumber , double cargoWeight , double pricePerTon) 
+public class CargoCar(double emptyWeight , int carriageNumber , double cargoWeight , double pricePerTon)
   : Carriage(emptyWeight , carriageNumber)
 {
   #region FIELDS
@@ -9,8 +9,8 @@ public class CargoCar(double emptyWeight , int carriageNumber , double cargoWeig
   #endregion
 
   #region PROPERTIES
-  public double CargoWeight { get => _cargoWeight; set => _cargoWeight = value; }
-  public double PricePerTon { get => _pricePerTon; set => _pricePerTon = value; }
+  public double CargoWeight { get => _cargoWeight; private set => _cargoWeight = value; }
+  public double PricePerTon { get => _pricePerTon; private set => _pricePerTon = value; }
   #endregion
 
   #region METHODS

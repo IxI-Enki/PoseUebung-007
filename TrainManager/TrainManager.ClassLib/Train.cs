@@ -23,7 +23,7 @@ public class Train(double maxTrainWeight)
         weight += c.GetFullWeight();
     return weight;
   }
-
+  
   // public Carriage? GetMostProfitableCarriage() => CarriageList?.OrderByDescending(c => c.GetProfit()).FirstOrDefault();
   public Carriage? GetMostProfitableCarriage()
   {
@@ -37,7 +37,7 @@ public class Train(double maxTrainWeight)
 
     return mostProfitableCar;
   }
-
+  
   // public int GetAmoutOfPassengersInTrain() => CarriageList?.Cast<PassengerCar>().Sum(p => p.NumberOfPassengers) ?? 0;
   public int GetAmoutOfPassengersInTrain()
   {
@@ -53,7 +53,7 @@ public class Train(double maxTrainWeight)
       }
     return numOfPassengers;
   }
-
+  
   public bool AddCarriage(Carriage newCar)
   {
     bool added = false;
@@ -66,7 +66,7 @@ public class Train(double maxTrainWeight)
 
     return added;
   }
-
+  
   public bool AddPassengersToCar(int carriageNumber , int newPassengers)
     => CanAddPassengers(carriageNumber , newPassengers);
   #endregion 
@@ -81,7 +81,7 @@ public class Train(double maxTrainWeight)
         count += (c is PassengerCar) ? 1 : 0;
     return count;
   }
-
+ 
   private void AddCarInSortedOrder(Carriage newCar)
   {
     int index = 0;
@@ -89,7 +89,7 @@ public class Train(double maxTrainWeight)
       index++;
     CarriageList.Insert(index , newCar);
   }
-
+ 
   private bool CanAddPassengers(int carriageNumber , int newPassengers)
   {
     if (CarriageList == null)
@@ -112,7 +112,7 @@ public class Train(double maxTrainWeight)
       }
     return false;
   }
-
+ 
   private bool CeckCarriage(int carriageNumber , int newPassengers , PassengerCar p)
     => carriageNumber == p.CarriageNumber
     && p.NumberOfPassengers + newPassengers <= Carriage.MAX_PASSENGERS_PER_CAR

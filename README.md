@@ -1,17 +1,23 @@
 # PoseUebung-007 -- Tain Manager
-![12/12UnitTestsFinished](UnitTestsFinished-1.png)  
+![12/12UnitTestsFinished](UnitTestsSnippet.png)
 
 ### Carriage:
-![carriage](image.png)
+> - overview  
+  ![carriage](CarriageOverview.png)  
+> - private helper methods  
+  ![carriageHelper](CarriageHelperMethods.png)  
 
 ### CargoCar:
-![cargocar](image-1.png)
+![cargocar](CargoCar.png)
 
 ### PassengerCar:
-![passengercar](image-2.png)
+![passengercar](PassengerCar.png)
 
 ### Train:
-
-![train01](<Screenshot 2024-11-06 105937.png>)
-![train02](<Screenshot 2024-11-06 105956.png>)
-![train03](<Screenshot 2024-11-06 110012.png>)
+> - overview    
+  ![train](TrainOverview.png)
+> - public (business) methods  
+  ![trainPublic](TrainPubicMethods01.png)
+  ![trainPublic2](TrainPubicMethods02.png)
+> - private (helper) methods  
+  ![trainPrivate](TrainHelperMethods.png)

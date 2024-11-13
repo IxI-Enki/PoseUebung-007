@@ -3,12 +3,12 @@
 public abstract class Carriage(double emptyWeight , int carNum)
 { 
   #region CONSTANTS
-  public const int MAX_PASSENGERS_PER_CAR = 200; //  Maximale Anzahl der Passagiere je Passagierwagon
+  public const int MAX_PASSENGERS_PER_CAR = 200; //  Max number of Passengers per PassengerCarriage
   public const double
-    AVG_WEIGHT_PER_PASSENGER = 0.06, //  Durchschnittsgewicht eines Passagiers (in Tonnen)
-    COST_PER_PASSENGER_CAR = 300.0,  //  Kosten je Wagon
-    MAX_CARGOWEIGHT_PER_CAR = 99.0,  //  Maximale Fracht in Tonnen je Frachtwagon
-    COST_PER_CARGO_CAR = 250.0;      //  Kosten je Frachtwagon
+    AVG_WEIGHT_PER_PASSENGER = 0.06, //  Average weight of one Passenger [t]
+    COST_PER_PASSENGER_CAR = 300.0,  //  Cost per PassengerCarriage
+    MAX_CARGOWEIGHT_PER_CAR = 99.0,  //  Max weight of freight [t] per CargoCarriage
+    COST_PER_CARGO_CAR = 250.0;      //  Cost per CargoCarriage
   #endregion
 
   #region FIELDS
@@ -19,6 +19,11 @@ public abstract class Carriage(double emptyWeight , int carNum)
   #region PROPERTIES
   public double EmptyWeight => _emptyWeight;
   public int CarriageNumber => _carriageNumber;
+  #endregion
+
+  #region ABSTRACT METHODS
+  public abstract double GetProfit();
+  public abstract double GetFullWeight();
   #endregion
 
   #region PRIVATE HELPER METHODS
@@ -35,10 +40,5 @@ public abstract class Carriage(double emptyWeight , int carNum)
       sum += digits[ i ] * (i + 1);
     return sum;
   }
-  #endregion
-
-  #region ABSTRACT METHODS
-  public abstract double GetProfit();
-  public abstract double GetFullWeight();
   #endregion
 }

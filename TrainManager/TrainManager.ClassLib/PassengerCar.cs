@@ -9,8 +9,8 @@ public class PassengerCar(double emptyWeight , int carriageNumber , int numberOf
   #endregion
 
   #region PROPERTIES
-  public int NumberOfPassengers { get => _numberOfPassangers; set => _numberOfPassangers = value; }
-  public double PricePerTicket { get => _pricePerTicket; set => _pricePerTicket = value; }
+  public int NumberOfPassengers { get => _numberOfPassangers; internal set => _numberOfPassangers = value; }
+  public double PricePerTicket { get => _pricePerTicket; }
   #endregion
 
   #region METHODS
